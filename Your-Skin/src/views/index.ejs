@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/partials/card.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main class="home-container">
+      <div class="carrousel-container">
+        <img
+          class="carrousel-item"
+          src="https://th.bing.com/th/id/R.08cce742e2463bd297a408f61ed9c089?rik=A3LQHjx02lZTzw&pid=ImgRaw&r=0"
+        />
+        <img
+          class="carrousel-item"
+          src="https://wallpapercave.com/wp/BeMfPus.jpg"
+        />
+        <img
+          class="carrousel-item"
+          src="https://wallpapercave.com/wp/QjG9Ppv.jpg"
+        />
+      </div>
+
+      <section class="featured-products">
+        <div class="featured-products-title">
+          <h2>CATÁLOGO DE PRODUCTOS</h2>
+          <p>Encontrarás una selección de productos de excelente calidad</p>
+        </div>
+
+        <div class="cards-container">
+          <% products.forEach(product => { %> <%-
+            include('./partials/card.ejs', {product}) %> <% }) %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
